@@ -44,5 +44,7 @@ null 객체에 대한 적절하게 대응할 수 있도록 개선됨
 ```
 
 #### Optional<T> filter(Predicate<? super T> predicate)
+* 그럴 일은 거의 없겠지만, predicate가 null이면 NullPointerException 발생
+* 
 ```java
 ```
