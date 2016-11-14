@@ -1,6 +1,8 @@
-#JWT(Java Web Token)
+#JWT(JSON Web Tokens)
 * 참고 자료 :
+	- [JSON Web Tokens][jwt-io]
 	- [outsider님의 JWT 설명 내용][outsider-jwt]
+	
 
 jwt는 session이나, db에 client 고유 정보를 저장하지 않고, 
 
@@ -32,7 +34,7 @@ body에 정의된 고유 토근이 있으며, 임의로 server와 client에 맞�
 header, body는 실제로 암호화 되는 영역이 아니기 때문(단순히 base64로 인코딩 처리됨)에 누구나 토근에 대한 정보를 열람할수 있음 
 
 [outsider-jwt]: https://blog.outsider.ne.kr/1160 
-
+[jwt-io]: https://jwt.io/
 
 #JaSYpt(Java Simplified Encryption)
 * 참고 자료 :
