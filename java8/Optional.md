@@ -100,3 +100,27 @@ Optional.ofNullable(x)
         .ifPresent(this::print);
         
 ```
+
+#### public T orElse(T other), 
+#### public T orElseGet(Supplier<? extends T> other),
+#### public <X extends Throwable> T orElseThrow(Supplier<? extends X> exceptionSupplier) throws X
+```java
+int len = (x != null)? x.length() : -1;
+
+// 객체에 값이 없으면, 기본 값으로 orElse에 있는값 상수 리턴
+Optional.ofNullable(x)
+    .map(String::length)
+    .orElse(-1);
+
+// 혹은,
+
+// 지정된 메소드의 값 리턴
+Optional.ofNullable(x)
+    .map(String::length)
+    .orElseGet(this::slowDefault);
+    
+// 아니면, 예외 처리
+Optional.ofNullable(x)
+    .map(String::length)
+    .orElseGet(EmptyStringException::new);
+```
