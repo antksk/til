@@ -6,7 +6,7 @@
 ![The core collection interfaces.](http://docs.oracle.com/javase/tutorial/figures/collections/colls-coreInterfaces.gif)
 
 
-* [Collection][Collection]: JCF의 최상위 interface로 객체들의 그룹을 나타낸다.
+* [Collection][Collection]: JCF의 최상위 interface로 객체들의 그룹을 나타냄
   - [Set][Set]
   	- 동적인 일차원 배열을 생성
   	- index를 통한 탐색을 지원하며, 중복 없는 데이터를 저장할수 있음
@@ -14,9 +14,9 @@
   - [List][List]
   	- 동적인 일차원 배열을 생성
   	- index를 통한 탐색을 지원하며, 중복된 데이터를 저장할수 있음
-  - [Queue][Queue]
+  - [Queue][Queue]쿠팡
   - [Deque][Deque]
-* [Map][Map]
+* [Map][Map]: key,vaule 형태의 데이터 구조를 나타냄
 	- [SortedMap][SortedMap]
 
 
