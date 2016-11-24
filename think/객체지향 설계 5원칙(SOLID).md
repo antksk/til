@@ -1,6 +1,10 @@
 ## 1. SRP(Single Responsibility Principle) : 단일 책임 원칙
+* 이 단계의 목적은 모듈들을 분리하고 반드시 하나의 액터만을 위해 존재 하도록 구성
+* Use Case를 분해하여, SRP를 준수하는 모듈로 격리(isolate)
+
 > 모든 클래스는 __단 하나의 책임__을 가져야 한다는 원칙
 
+ 
 
 ## 2. OCP(Open Closed Principle) : 개방 폐쇄 원칙
 > 확장에 대해서는 __개방__되어 있지만, 수정에 대해선 __폐쇄__되게 해야 한다는 원칙
