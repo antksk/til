@@ -42,24 +42,39 @@ JLS(Java Language Specification)를 확인해보면, Override를 지원하는 �
 
 
 ### 004. static contex에서 비 정적 변수에 대한 접근이 가능한가?
-
+정적 변수(static variable)은 class 영역에 속하고 비 정적 변수(none-static variable)은 class를 생성한 instance에 속한다.
+static variable은 JVM에 의해서 class가 로드 되어 질때 초기화 된다.<br/> 
+만약, instance를 통하지 않고, non-static variable에 접근을 시도 하면 Java Compiler는 에러를 발생 시킨다. 
+왜냐하면, 인스턴스 변수(non-static variable)는 아직 생성 되지 전이고, 어떻 instance와 관계되어 있는지 알수 없기 때문이다.
+  
 > ___4. Can you access non static variable in static context ?___
 
 > A static variable in Java belongs to its class and its value remains the same for all its instances. A static variable is initialized when the class is loaded by the JVM. If your code tries to access a non-static variable, without any instance, the compiler will complain, because those variables are not created yet and they are not associated with any instance.
 
-###
+### 005. Java에서는 어떤 Data Type를 지원하는 가? Autoboxing과 Unboxing은 무엇인가?
+
+Java에는 8개의 원시 데이터 타입([primitive data types][primitive data types], 컴퓨터가 이해하기 쉬운)을 지원한다.
+[primitive data types]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+
+| Data Type | Default Value | Size | Wrapper class |
+| --- | --- | --- | --- |
+|byte|0| -128(-2^7) ~ 127(2^7-1) |Byte|
+|short|0| -32,768 (-2^15) ~ 32,767(2^15 -1) |Short|
+|int|0| - 2,147,483,648 (-2^31) ~ 2,147,483,647(2^31 -1) |Integer|
+|long|0L| -9,223,372,036,854,775,808(-2^63) ~ 9,223,372,036,854,775,807 (inclusive)(2^63 -1) |Long|
+|float|0.0f| 32-bit IEEE 754 floating point |Float|
+|double|0.0d| 64-bit IEEE 754 floating point |Double|
+|char|'\u0000'| '\u0000' ~  '\uffff' (or 65,535 inclusive) |Character|
+|boolean|false| one bit of information |Boolean|
+
+Autoboxing은 Java Compiler가 원시 데이터 타입과 wrapping된 해당 객체 타입으로 자동변환 해주는 기능을 말한다.
+Unboxing은 Autoboxing된 객체를 다시 원시 데이터 타입으로 변환하는 것을 의미한다. <br/>
+원시 타입에 대한 제내릭 타입으로 변환등과 같이, 원시타입을 객체화 하여 사용할 때 종종 발생한다. 원시 타입을 객체화 하는 것은 성능 저하 현상이 발생할 수 있으므로, 반복문등에서 주의 해서 사용해야 된다.   
 
 > ___5. What are the Data Types supported by Java ? What is Autoboxing and Unboxing ?___
 
 > The eight primitive data types supported by the Java programming language are:
-byte
-short
-int
-long
-float
-double
-boolean
-char
+byte, short, int, long, float, double, boolean, char<br/>
 Autoboxing is the automatic conversion made by the Java compiler between the primitive types and their corresponding object wrapper classes. For example, the compiler converts an int to an Integer, a double to a Double, and so on. If the conversion goes the other way, this operation is called unboxing.
 
 ###

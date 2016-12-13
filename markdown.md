@@ -1,5 +1,10 @@
 마크다운(*.md:MarkDown) 문법
 ====================================================
+* 참고 : 
+  - [basic-writing-and-formatting-syntax][basic-writing-and-formatting-syntax]
+  - [organizing-information-with-tables][organizing-information-with-tables]
+[basic-writing-and-formatting-syntax]: https://help.github.com/articles/basic-writing-and-formatting-syntax/
+[organizing-information-with-tables]: https://help.github.com/articles/organizing-information-with-tables/
 
 ## 큰 제목 ####################################################################################
 ```
