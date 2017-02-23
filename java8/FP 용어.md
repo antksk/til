@@ -43,3 +43,18 @@ DoubleUnaryOperator convertKmtoMi = curriedConverter(0.6214, 0); // 킬로미터
 
 위와 같은 특성을 사용하여, 여섯 개의 인수를 가진 함수를 커링해서 우선 2, 4, 6번째 인수를 받아 5번째 인수를 받는 함수를 반환하고 다시 이 함수는 남은 1, 3번째 인수를 받는 함수를 반환할 수 있다. 
   이와 같이 여러 과정이 끝까지 완료되지 않은 상태를 가리켜 “함수가 부분적으로(partially) 적용되었다”라고 한다.
+  
+  
+## 모나드(monad)
+참고 : [케빈채널 e03 – 함수형 프로그래머를 찾아서 – 한주영 4부][케빈채널 e03 – 함수형 프로그래머를 찾아서 – 한주영 4부]
+
+
+서로 다른 일을 하는 두개의 함수를 합성 할때 사용하는 행위
+
+예를 들어, 
+int => Optional<String> => Optional<Student> =>  Student를 가져 오는 형식을 취한다고 했을때,
+
+Optional<String> => Optional<Student> 에서 Optional이 중첩이 발생하기 때문에,
+위 문제를 해결 하기 위해서 flatMap 하여 Student를 뽑아 낼때 사용하는 방식 
+
+[케빈채널 e03 – 함수형 프로그래머를 찾아서 – 한주영 4부]: https://iamprogrammer.io/2017/02/23/%EC%BC%80%EB%B9%88%EC%B1%84%EB%84%90-e03-%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EB%A5%BC-%EC%B0%BE%EC%95%84%EC%84%9C-%ED%95%9C%EC%A3%BC%EC%98%81-2/
