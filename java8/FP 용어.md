@@ -47,6 +47,7 @@ DoubleUnaryOperator convertKmtoMi = curriedConverter(0.6214, 0); // 킬로미터
   
 ## 모나드(monad)
 참고 : [케빈채널 e03 – 함수형 프로그래머를 찾아서 – 한주영 4부][케빈채널 e03 – 함수형 프로그래머를 찾아서 – 한주영 4부]
+[케빈채널 e03 – 함수형 프로그래머를 찾아서 – 한주영 4부]: https://iamprogrammer.io/2017/02/23/%EC%BC%80%EB%B9%88%EC%B1%84%EB%84%90-e03-%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EB%A5%BC-%EC%B0%BE%EC%95%84%EC%84%9C-%ED%95%9C%EC%A3%BC%EC%98%81-2/
 
 
 서로 다른 일을 하는 두개의 함수를 합성 할때 사용하는 행위
@@ -57,4 +58,11 @@ int => Optional<String> => Optional<Student> =>  Student를 가져 오는 형식
 Optional<String> => Optional<Student> 에서 Optional이 중첩이 발생하기 때문에,
 위 문제를 해결 하기 위해서 flatMap 하여 Student를 뽑아 낼때 사용하는 방식 
 
-[케빈채널 e03 – 함수형 프로그래머를 찾아서 – 한주영 4부]: https://iamprogrammer.io/2017/02/23/%EC%BC%80%EB%B9%88%EC%B1%84%EB%84%90-e03-%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EB%A5%BC-%EC%B0%BE%EC%95%84%EC%84%9C-%ED%95%9C%EC%A3%BC%EC%98%81-2/
+
+free 모나드: list 형태로 모나드를 저장해 놓고, 결과를 계산할때 하나씩 적용해서 결과를 만들어 가는 형태
+
+
+## 모노이드
+더하기가 가능한 타입( int, String 등 )
+free 모노이드 : list로 저장해서 연결하는(더하기)를 구현한 형태
+
