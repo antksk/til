@@ -27,6 +27,7 @@
 
 ## 커링(curring) 
  Function를 생성하는 함수 팩토리를 가르쳐 커링이라 부른다. 
+커링을 자주 하게 되면, 함수의 파라미터 갯수를 줄 
 ```java
 static DoubleUnaryOperator curriedConverter(double f, double b){
   return (double x) -> x * f + b;
@@ -59,7 +60,8 @@ Optional<String> => Optional<Student> 에서 Optional이 중첩이 발생하기 
 위 문제를 해결 하기 위해서 flatMap 하여 Student를 뽑아 낼때 사용하는 방식 
 
 
-free 모나드: list 형태로 모나드를 저장해 놓고, 결과를 계산할때 하나씩 적용해서 결과를 만들어 가는 형태
+* free 모나드: list 형태로 모나드를 저장해 놓고, 결과를 계산할때 하나씩 적용해서 결과를 만들어 가는 형태
+* state 모나드: for 문장을 구성할때, i와 같이 각 동작에 대한 상태를 저장해야 하는 상태 정보 
 
 
 ## 모노이드
