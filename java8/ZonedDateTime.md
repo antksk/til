@@ -66,3 +66,11 @@ LocalDate date = dt.toLocalDate();
 LocalTime time = dt.toLocalTime();
 ```
 
+
+## 날짜 포맷
+http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
+```java
+LocalDate date = LocalDate.now();
+String text = date.format(formatter);
+LocalDate parsedDate = LocalDate.parse(text, formatter)
+```
