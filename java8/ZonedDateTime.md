@@ -74,3 +74,18 @@ LocalDate date = LocalDate.now();
 String text = date.format(formatter);
 LocalDate parsedDate = LocalDate.parse(text, formatter)
 ```
+
+## 날짜 범위 지정을 통한 리스트 반환
+```java
+final LocalDateTime startDate = LocalDateTime.now();
+final LocalDateTime endDate = startDate.plusMonths(1);
+final long betweenLimitDays = ChronoUnit.DAYS.between(startDate, endDate) + 1;
+
+List<LocalDate> rangeDays = Stream.iterate(startDate, d->d.plusDays(1))
+	.limit(betweenLimitDays)
+	.map(d->d.toLocalDate())
+	.collect(Collectors.toList())
+;
+log.debug("{}", rangeDays);
+
+```
