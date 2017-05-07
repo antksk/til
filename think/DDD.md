@@ -48,3 +48,6 @@
 > 유효성 검사, 계산, 파생 등이 포함된 복잡하고, 끊임없이 변하는<br/>
 > 비즈니스 규칙을 구현해야 한다면 객체 모델을 사용해 비즈니스 규칙을 처리하는 것이 현명하다.<br/>
 > -- Martin Fowler
+
+## CQRS(Command Query Responsibility Segregation) Pattern
+상태를 변경하는 명령 기능과 내용을 조회하는 쿼리 기능을 위한 모델을 구분하는 패턴(DDD start p.246)
