@@ -20,6 +20,8 @@
   - __Bounded Context__ : 특정한 Domain Model이 적용되는 제한된 영역, 경계내에선 동일한 모델을 일관되게 적용, 경계 밖의 일관성은 고려 대상이 아님
   	- bounded context는 독립적으로 분리되어도 상관없는 업무 범위를 의미
   	- 예) 쇼핑몰의 판매 컨텍스트(sales context), 판매 지원 컨텍스트(support context), 결제 컨텍스트(payments context)등
+  	   또는, 포털 사이트에서 검색 기능 컨텍스트, 블로그, 카페, 게시판 등의 컨텍스트
+  	   Bounded Context 관계를 표현할때 중요한 요소는 서로 관계를 맺고 있는 컨텍스트간의 명확한 통신 규약을 표현하는 것임(컨텍스트 맵)
   - __Ubiquitous language__ : 보편언어(Ubiquitous Language)는 도메인 전문가 혹은 사용자와 개발자 사이의 의사 소통 어려움을 보편적인 언어(용어정리를 통한 일반화된 단어사용)를 통해 소통의 어려움을 해결 하는 것을 목표로 하는 행위를 의미함
     - 보편언어들로 정의 할때, 고려되어야 하는 사항은 Bounded Context(제한범위)범위 내에서 정의 되어야 함
   - __Service__ : Domain Object에 위치시키기 어려운 오퍼레이션을 가지는 객체, 여러 Domain Object를 다루는 연산, Service의 오퍼레이션은 일반적으로 상태를 가지지 않음(stateless)
