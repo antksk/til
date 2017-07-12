@@ -4,7 +4,7 @@
 ```java
  // FP 객체를 변수 처럼 취급
  Function<String, Integer> starToInt = Integer::parseInt;
- 
+
  // 혹은
  
  Map<String, Function<String,Integer>> m = new ImmutableMap.Builder<String,Function<String,Integer>>()
