@@ -8,7 +8,7 @@
 
 * [Collection][Collection]: JCF의 최상위 interface로 객체들의 그룹을 나타냄
   - [Set][Set]
-  	- 동적인 일차원 배열을 생성
+  	- 동적인 일차원 배열을 생성(중복 형용되지 않음)
   	- index를 통한 탐색을 지원하며, 중복 없는 데이터를 저장할수 있음
   		- SortedSet
   - [List][List]
