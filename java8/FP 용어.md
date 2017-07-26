@@ -63,7 +63,6 @@ Optional<String> => Optional<Student> 에서 Optional이 중첩이 발생하기 
 * free 모나드: list 형태로 모나드를 저장해 놓고, 결과를 계산할때 하나씩 적용해서 결과를 만들어 가는 형태
 * state 모나드: for 문장을 구성할때, i와 같이 각 동작에 대한 상태를 저장해야 하는 상태 정보 
 
-
 ## 모노이드
 더하기가 가능한 타입( int, String 등 )
 free 모노이드 : list로 저장해서 연결하는(더하기)를 구현한 형태
