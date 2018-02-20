@@ -1,5 +1,5 @@
 # JAVA8 시간 관련 객체에 대한 소계
-참고 : 
+참고 :
 * [NAVER D2-Java의 날짜와 시간 API][NAVER D2-Java의 날짜와 시간 API]
 * [Java8 in Action][Java8 in Action]
 [NAVER D2-Java의 날짜와 시간 API]: http://d2.naver.com/helloworld/645609
@@ -54,7 +54,7 @@ parse 메소드에 DateTimeFormatter를 추가로 전달하여, 날짜, 시간 �
 ```java
 // 2014-03-18T13:45:20
 
-LocalDateTime dt1 = LocalDateTime.of(2014, Month.MARCH, 18, 13, 45, 20); 
+LocalDateTime dt1 = LocalDateTime.of(2014, Month.MARCH, 18, 13, 45, 20);
 LocalDateTime dt2 = LocalDateTime.of(date,time);
 LocalDateTime dt3 = date.atTime(13, 45, 20);
 LocalDateTime dt4 = date.atTime(time);
@@ -88,4 +88,86 @@ List<LocalDate> rangeDays = Stream.iterate(startDate, d->d.plusDays(1))
 ;
 log.debug("{}", rangeDays);
 
+```
+
+## 시간 범위 테스트
+```java
+@Slf4j
+public class LocalTimeTest {
+
+    @Value
+    static class LocalTimeBoundChecker{
+        private LocalTime fromTime;
+        private LocalTime toTime;
+
+
+        public static LocalTimeBoundChecker of(LocalTime fromTime, LocalTime toTime){
+            return new LocalTimeBoundChecker(fromTime, toTime);
+        }
+
+        public boolean isBoundTime(LocalTime targetTime){
+            return isFromTimeBefore(targetTime) && isToTimeAfter(targetTime);
+        }
+
+        public boolean isFromTimeBefore(Temporal targetTime){
+            return 0 <= Duration.between(fromTime, targetTime).getSeconds();
+        }
+
+        public boolean isToTimeAfter(Temporal targetTime){
+            return 0 > Duration.between(toTime, targetTime).getSeconds();
+        }
+    }
+
+    @Test
+    public void test(){
+        displayTimeChecker(LocalTime.of(7,55));
+        displayTimeChecker(LocalTime.of(8,0));
+        displayTimeChecker(LocalTime.of(8,1));
+        displayTimeChecker(LocalTime.of(12,55));
+        displayTimeChecker(LocalTime.of(16,32));
+        displayTimeChecker(LocalTime.of(22,00));
+        displayTimeChecker(LocalTime.of(22,32));
+        displayTimeChecker(LocalTime.of(23,59));
+    }
+
+    private void displayTimeChecker(LocalTime targetTime) {
+        LocalTime fromTime = LocalTime.of(8,00,00);
+        LocalTime toTime = LocalTime.of(22,0,0);
+
+        Duration fromDuration = Duration.between(fromTime, targetTime);
+        Duration toDuration = Duration.between(toTime, targetTime);
+
+        log.debug("({})from : ({})s, \t\t\t ({})to : ({})s ==> result : {}",
+                fromTime, fromDuration.getSeconds(),
+                toTime, toDuration.getSeconds(),
+                LocalTimeBoundChecker.of(fromTime, toTime).isBoundTime(targetTime));
+    }
+
+}
+```
+
+## 전체 시간을 기준으로 차이 계산
+```ChronoUnit``` 클래스의 ```between(Temporal start, Temporal end)``` 메서드를 사용, 리턴타입은 ```long```
+
+| 클래스 | 설명 |
+| --- | --- |
+| ChronoUnit.YEARS | 전체 년 차이 |
+| ChronoUnit.MONTHS | 전체 월 차이 |
+| ChronoUnit.WEEKS | 전체 주 차이 |
+| ChronoUnit.DAYS | 전체 일 차이 |
+| ChronoUnit.HOURS | 전체 시간 차이 |
+| ChronoUnit.SECONDS | 전체 초 차이 |
+| ChronoUnit.MILLIS | 전체 밀리초 차이 |
+| ChronoUnit.NANOS | 전체 나노초 차이 |
+
+```java
+LocalDate startDate = LocalDate.now();
+LocalDate endDate = LocalDate.of(2016,5,5);
+
+log.debug("{}",  ChronoUnit.DAYS.between(startDate, endDate));
+
+LocalTime startTime = LocalTime.now();
+LocalTime endTime = LocalTime.of(22,0);
+
+log.debug("{}",  ChronoUnit.SECONDS.between(startTime, endTime));
 ```
