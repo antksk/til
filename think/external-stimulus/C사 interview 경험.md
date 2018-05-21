@@ -14,5 +14,36 @@
 
 
 ## 3-1차 
+* temp 없이 swap 함수 구현하기
+```java
+import java.*;
+ 
+public class SwapWithoutTemp {
+    
+    private static void usingArithmeticOperatorsVersion(int x, int y){
+        x = x + y;  // x는 15
+        y = x - y;  // y는 10변경 ( x --> y )
+        x = x - y;  // x는 5변경 ( y --> x )
+        log.debug("x = {}, y = {}", x, y);
+    }
+    
+    private static void usingBitwiseXORVersion(int x, int y){
+        x = x ^ y; // x는 15(1111)
+        y = x ^ y; // y는 10(1010)변경 ( x --> y ) 10 
+        x = x ^ y; // x는 5(0101)변경 ( y --> x )
+        log.debug("x = {}, y = {}", x, y);
+    }
+ 
+    public static void main(String a[]){
+        int x = 10, y = 5;
+        
+        // +, - 연산을 통한 swap
+        usingArithmeticOperatorsVersion(x, y); 
+        
+        // XOR 연산을 통한 swap
+        usingBitwiseXORVersion(x, y);
+    }
+}
+```
 ## 3-2차 
 ## 3-3차 
