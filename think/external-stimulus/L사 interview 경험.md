@@ -109,3 +109,14 @@ public class Queue_Test {
     }
 }
 ```
+## 2차 사전테스트
+특이사항 : 30분 동안 LG그램 노트북으로 word문서에 작성
+- sql
+- 싱글톤 구현
+- TCP 3way handshake
+
+## 2차 인터뷰
+- JPA 기본
+- 담당했던 프로젝트 심화
+- 관심 분야
+- JPA persistence context lifecycle 
