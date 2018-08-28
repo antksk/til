@@ -14,7 +14,7 @@
   - [List][List]
   	- 동적인 일차원 배열을 생성
   	- index를 통한 탐색을 지원하며, 중복된 데이터를 저장할수 있음
-  - [Queue][Queue]쿠팡
+  - [Queue][Queue]
   - [Deque][Deque]
 * [Map][Map]: key,vaule 형태의 데이터 구조를 나타냄
 	- [SortedMap][SortedMap]
