@@ -3,7 +3,7 @@
 2. 테스트에서 ```@TestPropertySource``` 애너테이션을 선언한 경우
 3. 테스트에서 ```@SpringBootTest#properties```애너테이션을 선언한 경우
 4. 커맨드라인 실행 인자
-5. ```SPRING_APPLICATION_JSON```으로 정의된 속성
+5. ```SPRING_APPLICATION_JSON```환경변수로 정의된 속성
 6. ServletConfig초기화 파라미터
 7. ServletContext 초기화 파라미터
 8. ```java:comp/env```으로 설정한 JNDI속성
