@@ -11,7 +11,7 @@
 
 * 용어 :
   - __엔티티(Entity)__ : 식별성을 지닌 영속 객체(JPA의 @Entity를 가진 객체) 
-  - __값 객체(Value Object)__ : 식별성이 아닌 속성을 이용해 정의 되는 객체 __불변객체__를 사용하여 자주 정의됨(JPA에서 @Embedded로 정의된 객체)
+  - __값 객체(Value Object)__ : 식별성이 아닌 속성을 이용해 정의 되는 객체 __불변객체__ 를 사용하여 자주 정의됨(JPA에서 @Embedded로 정의된 객체)
   Entity의 속성 뿐만 아니라 다른 Value Object의 속성으로도 사용됨
   - __애그리거트(Aggregate)__ : 연관된 Entity와 Value Object의 묶음, 트랜잭션 의 분산 단위, 캡슐화를 통한 복잡성 관리,
   예를 들어, Order Entity와 OrderItem ValueObject, Orderer(주문자) ValueObject를 "주문 애그리거트"로 묶을 수 있음
