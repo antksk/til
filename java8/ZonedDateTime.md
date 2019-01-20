@@ -71,8 +71,9 @@ LocalTime time = dt.toLocalTime();
 http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
 ```java
 LocalDate date = LocalDate.now();
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd");
 String text = date.format(formatter);
-LocalDate parsedDate = LocalDate.parse(text, formatter)
+LocalDate parsedDate = LocalDate.parse(text, formatter);
 ```
 
 ## 날짜 범위 지정을 통한 리스트 반환
