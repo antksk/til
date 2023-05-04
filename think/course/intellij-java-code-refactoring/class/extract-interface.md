@@ -4,3 +4,6 @@
 
 ### Action Window > Extract Interface
 
+![image](https://user-images.githubusercontent.com/1481137/236083470-be3b0e79-2726-49f5-a6b5-98723be10f80.png)
+
+![image](https://user-images.githubusercontent.com/1481137/236083610-9824cf14-f1e5-4c3b-98d9-a4a5d5ec22bf.png)
