@@ -24,6 +24,9 @@ public class PullMemberUp {
 
 pull member up
 
+![image](https://user-images.githubusercontent.com/1481137/236135511-6b5d9c75-9c86-4c89-b0bc-34ea62709980.png)
+
+
 ```java
 public class PullMemberUp {
 
